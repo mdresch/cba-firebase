@@ -1,0 +1,109 @@
+[debug] [2025-05-12T20:36:00.995Z] ----------------------------------------------------------------------
+[debug] [2025-05-12T20:36:00.998Z] Command:       /nix/store/rbdrkcs5kkwpalxcd7c6bnm33lk2955n-nodejs-20.19.0/bin/node /home/user/.global_modules/bin/firebase deploy --only hosting
+[debug] [2025-05-12T20:36:00.999Z] CLI Version:   14.3.1
+[debug] [2025-05-12T20:36:00.999Z] Platform:      linux
+[debug] [2025-05-12T20:36:01.000Z] Node Version:  v20.19.0
+[debug] [2025-05-12T20:36:01.000Z] Time:          Mon May 12 2025 20:36:01 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-05-12T20:36:01.000Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-12T20:36:01.003Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-05-12T20:36:01.570Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-12T20:36:01.571Z] > authorizing via signed-in user (menno.drescher@gmail.com)
+[debug] [2025-05-12T20:36:01.571Z] [iam] checking project cba-my-firebase for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-05-12T20:36:01.572Z] Checked if tokens are valid: false, expires at: 1747051828627
+[debug] [2025-05-12T20:36:01.572Z] Checked if tokens are valid: false, expires at: 1747051828627
+[debug] [2025-05-12T20:36:01.573Z] > refreshing access token with scopes: []
+[debug] [2025-05-12T20:36:01.574Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-05-12T20:36:01.574Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-05-12T20:36:01.642Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-05-12T20:36:01.642Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-05-12T20:36:01.656Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cba-my-firebase:testIamPermissions [none]
+[debug] [2025-05-12T20:36:01.656Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/cba-my-firebase:testIamPermissions x-goog-quota-user=projects/cba-my-firebase
+[debug] [2025-05-12T20:36:01.657Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cba-my-firebase:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-05-12T20:36:01.813Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cba-my-firebase:testIamPermissions 200
+[debug] [2025-05-12T20:36:01.814Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cba-my-firebase:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-05-12T20:36:01.815Z] Checked if tokens are valid: true, expires at: 1747085760643
+[debug] [2025-05-12T20:36:01.815Z] Checked if tokens are valid: true, expires at: 1747085760643
+[debug] [2025-05-12T20:36:01.816Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cba-my-firebase [none]
+[debug] [2025-05-12T20:36:01.885Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-05-12T20:36:01.885Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-05-12T20:36:02.128Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cba-my-firebase 200
+[debug] [2025-05-12T20:36:02.128Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cba-my-firebase {"projectId":"cba-my-firebase","projectNumber":"270568628295","displayName":"cba-my-firebase","name":"projects/cba-my-firebase","resources":{"hostingSite":"cba-my-firebase"},"state":"ACTIVE","etag":"1_2f610199-cc11-4b08-a357-62493c292bb3"}
+[debug] [2025-05-12T20:36:04.375Z] defaultcredentials: writing to file /home/user/.config/firebase/menno_drescher_gmail.com_application_default_credentials.json
+[debug] [2025-05-12T20:36:04.379Z] Checked if tokens are valid: true, expires at: 1747085760643
+[debug] [2025-05-12T20:36:04.379Z] Checked if tokens are valid: true, expires at: 1747085760643
+[debug] [2025-05-12T20:36:04.381Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/cba-my-firebase/sites pageToken=&pageSize=10
+[debug] [2025-05-12T20:36:05.180Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/cba-my-firebase/sites 200
+[debug] [2025-05-12T20:36:05.180Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/cba-my-firebase/sites {"sites":[{"name":"projects/cba-my-firebase/sites/cba-my-firebase","defaultUrl":"https://cba-my-firebase.web.app","appId":"1:270568628295:web:fa8575d846c23943ad9162","type":"DEFAULT_SITE"}]}
+[debug] [2025-05-12T20:36:05.181Z] Checked if tokens are valid: true, expires at: 1747085760643
+[debug] [2025-05-12T20:36:05.181Z] Checked if tokens are valid: true, expires at: 1747085760643
+[debug] [2025-05-12T20:36:05.181Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:270568628295:web:fa8575d846c23943ad9162/config [none]
+[debug] [2025-05-12T20:36:05.783Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:270568628295:web:fa8575d846c23943ad9162/config 200
+[debug] [2025-05-12T20:36:05.784Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:270568628295:web:fa8575d846c23943ad9162/config {"projectId":"cba-my-firebase","appId":"1:270568628295:web:fa8575d846c23943ad9162","storageBucket":"cba-my-firebase.firebasestorage.app","apiKey":"AIzaSyAOMFEkVraM6_P_u0G5fFpL24UU6li02fI","authDomain":"cba-my-firebase.firebaseapp.com","messagingSenderId":"270568628295","measurementId":"G-PS6HWCQWNB"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-05-12T20:36:11.088Z] Checked if tokens are valid: true, expires at: 1747085760643
+[debug] [2025-05-12T20:36:11.088Z] Checked if tokens are valid: true, expires at: 1747085760643
+[debug] [2025-05-12T20:36:11.089Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/cba-my-firebase/sites/cba-my-firebase [none]
+[debug] [2025-05-12T20:36:11.839Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/cba-my-firebase/sites/cba-my-firebase 200
+[debug] [2025-05-12T20:36:11.839Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/cba-my-firebase/sites/cba-my-firebase {"name":"projects/cba-my-firebase/sites/cba-my-firebase","defaultUrl":"https://cba-my-firebase.web.app","appId":"1:270568628295:web:fa8575d846c23943ad9162","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 15.3.2
+
+[info]    - Environments: .env.local
+
+
+[info]    Creating an optimized production build ...
+
+[info] Failed to compile.
+
+
+[info] ./app/auth/reset-password/page.tsx
+Error:   x You're importing a component that needs `useState`. This React hook only works in a client component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  |
+  |  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  |
+
+   ,-[/home/user/cba-firebase/hosting/app/auth/reset-password/page.tsx:1:1]
+ 1 | import React, { useState, FormEvent } from 'react';
+   :                 ^^^^^^^^
+ 2 | import { getAuth, sendPasswordResetEmail, Auth } from 'firebase/auth';
+ 3 | import { app } from '../../utils/firebaseConfig'; // Assuming firebaseConfig is in the correct relative path
+   `----
+
+Import trace for requested module:
+./app/auth/reset-password/page.tsx
+
+./app/auth/signup/page.tsx
+Error:   x You're importing a component that needs `useState`. This React hook only works in a client component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  |
+  |  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  |
+
+   ,-[/home/user/cba-firebase/hosting/app/auth/signup/page.tsx:1:1]
+ 1 | import React, { useState } from 'react';
+   :                 ^^^^^^^^
+ 2 | import { Container, Box, Typography, TextField, Button } from '@mui/material';
+ 3 | import { createUserWithEmailAndPassword, FirebaseError } from 'firebase/auth';
+ 4 | import { doc, setDoc } from 'firebase/firestore';
+   `----
+
+Import trace for requested module:
+./app/auth/signup/page.tsx
+
+
+[info] 
+
+[info] > Build failed because of webpack errors
+
+[debug] [2025-05-12T20:36:38.178Z] Error: ENOENT: no such file or directory, open '/home/user/cba-firebase/hosting/.next/server/middleware-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -3,7 +3,6 @@ import useRequireAuth from '../utils/useRequireAuth';
 import UserManagement from '../components/UserManagement';
 
 const AdminDashboard = () => {
-  useRequireAuth('admin');
   return (
     <div style={{ padding: '20px' }}>
       <h1>Admin Dashboard</h1>

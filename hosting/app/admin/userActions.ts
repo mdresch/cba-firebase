@@ -2,7 +2,7 @@
 
 import { getAuth, UserRecord } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
-import { User } from '@/app/utils/types';
+import { User } from '../../app/utils/types';
 import admin from 'firebase-admin';
 
 // Initialize Firebase Admin if not already initialized
