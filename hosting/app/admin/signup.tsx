@@ -4,14 +4,14 @@ import { createUserWithEmailAndPassword, FirebaseError } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../../utils/firebaseConfig';
 
-const SignUpPage = () => { 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  const [firebaseError, setFirebaseError] = useState('');
+const SignUpPage: React.FC = () => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [emailError, setEmailError] = useState<string>('');
+  const [passwordError, setPasswordError] = useState<string>('');
+  const [firebaseError, setFirebaseError] = useState<string>('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Reset previous errors
@@ -39,6 +39,12 @@ const SignUpPage = () => {
         role: "user", // Default role assigned to new users
         createdAt: new Date(),
       });
+    } catch (error: any) {
+      if (error instanceof FirebaseError) {
+        setFirebaseError(error.message);
+      } else {
+        setFirebaseError('An unexpected error occurred.');
+      }
     }
   };
 
@@ -89,9 +95,6 @@ const SignUpPage = () => {
               {firebaseError}
             </Typography>
           )}
-          <Button
-            type="submit"
-            fullWidth
           <Button
             type="submit"
             fullWidth
