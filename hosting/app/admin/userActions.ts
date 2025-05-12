@@ -1,3 +1,5 @@
+'use server';
+
 import { getAuth, UserRecord } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
 import admin from 'firebase-admin';

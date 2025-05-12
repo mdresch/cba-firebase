@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation'; // Use next/navigation for App Router
 import { useAuth } from '../context/AuthContext';
 
-const useRequireAuth = (): void => {
+const useRequireAuth = (p0: string): void => {
   const { currentUser, loading } = useAuth();
   const router = useRouter();
 
