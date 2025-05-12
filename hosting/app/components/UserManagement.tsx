@@ -2,13 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import UpdateUserRole from './UpdateUserRole';
 import { listAllUsers } from '../admin/userActions';
-
-interface User {
-  uid: string;
-  displayName: string | null;
-  email: string;
-  role?: string; // Role is optional, default to 'user' if not present
-}
+import { User } from '@/app/utils/types';
 
 const UserManagement: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -43,7 +37,7 @@ const UserManagement: React.FC = () => {
   }
 
   return (
-    <div>
+    <>
       <h2>User Management</h2>
       {users.map(user => (
         <div key={user.uid} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px 0' }}>
@@ -53,7 +47,7 @@ const UserManagement: React.FC = () => {
           <UpdateUserRole user={user} onRoleUpdated={handleRoleUpdated} />
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

@@ -2,28 +2,31 @@
 
 import { getAuth, UserRecord } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
+import { User } from '@/app/utils/types';
 import admin from 'firebase-admin';
 
 // Initialize Firebase Admin if not already initialized
 if (!admin.apps.length) {
-  admin.initializeApp();
+  try {
+    admin.initializeApp();
+  } catch (error: any) {
+    console.error('Error initializing Firebase Admin SDK:', error);
+  }
 }
 
 const auth = getAuth();
 const db = getFirestore();
 
-interface User {
-  uid: string;
-  email?: string;
-  displayName?: string;
-  role?: string; // Assuming a 'role' custom claim/field
-  // Add other relevant user properties from UserRecord
-}
-
 export const listAllUsers = async (nextPageToken?: string): Promise<User[]> => {
   try {
     const listUsersResult = await auth.listUsers(1000, nextPageToken);
+    console.log('listUsersResult:', listUsersResult); // Log the result
     const users: User[] = listUsersResult.users.map((userRecord: UserRecord) => {
+      // Add more detailed logging for each user record
+      console.log('Processing user record:', userRecord.uid, userRecord.email);
+      if (!userRecord.displayName) {
+        console.warn('User record missing displayName:', userRecord.uid);
+      }
       const userJson = userRecord.toJSON();
       return {
         uid: userJson.uid,

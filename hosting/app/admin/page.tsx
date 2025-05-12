@@ -1,3 +1,4 @@
+"use client";
 import useRequireAuth from '../utils/useRequireAuth';
 import UserManagement from '../components/UserManagement';
 

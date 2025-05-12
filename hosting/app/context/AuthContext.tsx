@@ -1,3 +1,4 @@
+"use client";
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, User } from 'firebase/auth';
 import { app } from '../utils/firebaseConfig'; // Assuming firebaseConfig is in the utils folder
