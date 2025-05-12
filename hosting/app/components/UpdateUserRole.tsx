@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { updateUserRole } from '../utils/admin';
+import { updateUserRole } from '../admin/userActions';
 
 interface User {
   uid: string;

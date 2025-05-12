@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { listAllUsers } from '../../admin/userActions';
 import UpdateUserRole from './UpdateUserRole';
+import { listAllUsers } from '../admin/userActions';
 
 interface User {
   uid: string;
